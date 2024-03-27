@@ -49,7 +49,7 @@ error_down(){
 }
 #安装及初始化
 gettar(){
-	webget /tmp/ShellCrash.tar.gz "$url/bin/ShellCrash.tar.gz"
+	webget /tmp/ShellCrash.tar.gz "https://github.com/zhuixing05/ShellCrash/raw/dev/bin/ShellCrash.tar.gz"
 	if [ "$result" != "200" ];then
 		$echo "\033[33m文件下载失败！\033[0m"
 		error_down
