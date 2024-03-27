@@ -1,7 +1,7 @@
 #! /bin/bash
 # Copyright (C) Juewuy
 
-[ -z "$url" ] && url="https://fastly.jsdelivr.net/gh/juewuy/ShellCrash@master"
+[ -z "$url" ] && url="https://ghproxy.com/https://github.com/zhuixing05/ShellCrash/raw/dev"
 type bash &>/dev/null && shtype=bash || shtype=sh 
 echo='echo -e' 
 [ -n "$(echo -e|grep e)" ] && {
@@ -11,7 +11,7 @@ echo='echo -e'
 
 echo "***********************************************"
 echo "**                 欢迎使用                  **"
-echo "**                ShellCrash                 **"
+echo "**                openshell                 **"
 echo "**                             by  Juewuy    **"
 echo "***********************************************"
 #内置工具
@@ -44,12 +44,11 @@ webget(){
 	fi
 }
 error_down(){
-	$echo "请参考 \033[32mhttps://github.com/juewuy/ShellCrash/blob/master/README_CN.md"
 	$echo  "\033[33m使用其他安装源重新安装！\033[0m" 
 }
 #安装及初始化
 gettar(){
-	webget /tmp/ShellCrash.tar.gz "https://github.com/zhuixing05/ShellCrash/raw/dev/bin/ShellCrash.tar.gz"
+	webget /tmp/ShellCrash.tar.gz "https://ghproxy.com/https://github.com/zhuixing05/ShellCrash/raw/dev/bin/ShellCrash.tar.gz"
 	if [ "$result" != "200" ];then
 		$echo "\033[33m文件下载失败！\033[0m"
 		error_down
@@ -94,7 +93,7 @@ setdir(){
 		fi
 	}
 echo -----------------------------------------------
-$echo "\033[33m注意：安装ShellCrash至少需要预留约1MB的磁盘空间\033[0m"
+$echo "\033[33m注意：安装openshell至少需要预留约1MB的磁盘空间\033[0m"
 if [ -n "$systype" ];then
 	[ "$systype" = "Padavan" ] && dir=/etc/storage
 	[ "$systype" = "mi_snapshot" ] && {
@@ -244,7 +243,6 @@ rm -rf /tmp/version
 #输出
 $echo "最新版本：\033[32m$versionsh\033[0m"
 echo -----------------------------------------------
-$echo "\033[44m如遇问题请加TG群反馈：\033[42;30m t.me/ShellClash \033[0m"
 $echo "\033[37m支持各种基于openwrt的路由器设备"
 $echo "\033[33m支持Debian、Centos等标准Linux系统\033[0m"
 
